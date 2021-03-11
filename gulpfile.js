@@ -1,14 +1,21 @@
 const gulp = require('gulp')
 const browserSync = require('browser-sync').create()
+const webpack = require('webpack-stream')
 
 // Move any html files to dist folder for deploy
 gulp.task("html", function () {
     return gulp.src("src/*.html")
         .pipe(gulp.dest("dist"))
 })
-// Move any files in js foler to dist folder for deploy
+// Move any files in js folder to dist folder for deploy
 gulp.task("js", function () {
     return gulp.src("src/js/*.js")
+        .pipe(
+            webpack({
+                output: {
+                    filename: "app.js"
+                }
+        }))
         .pipe(gulp.dest("dist/js"))
 })
 

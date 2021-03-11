@@ -10,7 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.13",
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "webpack-stream": "^6.1.1"
   },
   "dependencies": {
     "gulp-cli": "^2.3.0"
